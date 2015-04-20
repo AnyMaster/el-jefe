@@ -1,4 +1,8 @@
 syntax: glob
 .git/*
-*.pyc
+
+webapp/xmlserver/certs/*.key
+webapp/xmlserver/certs/*.pem
+
 *.py?
+*.log

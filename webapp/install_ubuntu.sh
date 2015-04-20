@@ -12,7 +12,7 @@ echo "Installing El Jefe dependencies ..."
 
 apt-get -y install python-psycopg2 build-essential python-dev python-pip postgresql mongodb python-sqlalchemy python-bson python-dpkt python-jinja2 python-magic python-bottle python-pefile python-chardet
 
-pip install django==1.6 django-taggit django-bootstrap3 requests numpy pymongo pycrypto
+pip install django==1.8 django-taggit django-bootstrap3 requests numpy pymongo==2.8 pycrypto
 
 echo "Creating Postgresql tables and user ..."
 

@@ -1,5 +1,8 @@
 /.hg
 
+/webapp/xmlserver/certs/*.key
+/webapp/xmlserver/certs/*.pem
+    
 *.py?
 *.log
 

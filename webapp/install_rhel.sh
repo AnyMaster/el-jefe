@@ -29,7 +29,7 @@ echo "enabled=1" >> /etc/yum.repos.d/mongodb.repo
 echo "Installing El Jefe dependencies ..."
 easy_install pip
 yum -y install python-psycopg2 postgres postgresql-server mongo-10gen mongo-10gen-server python-devel gcc gcc-c++ make openssl-devel
-pip install django==1.6 django-taggit requests numpy pymongo pycrypto jinja2 sqlalchemy bson django-bootstrap3
+pip install django==1.8 django-taggit requests numpy pymongoo==2.8 pycrypto jinja2 sqlalchemy bson django-bootstrap3
 
 echo 'Configuring Postgresql'
 
