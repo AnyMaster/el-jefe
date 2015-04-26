@@ -4,36 +4,18 @@
 
 ## UDP server to process the incoming data and jam it into the PG database
 
-import zlib
-import struct
-import threading
-import psycopg2
-import binascii
-import time
-import xmlrpclib
 import SimpleXMLRPCServer
 import os
-import datetime
-import time
 import traceback
 import sys
-import math
 import base64
-import cPickle
 import SocketServer
 import BaseHTTPServer
-import SimpleHTTPServer
 import socket
 import ssl
-import email
-import smtplib
-from email.mime.text import MIMEText
-from django.core.mail import send_mail
 from Crypto.Cipher import AES
-import ntpath
-from django.core.exceptions import ObjectDoesNotExist
 import logging
-from privs import privilegesdict
+from django.core.exceptions import ObjectDoesNotExist
 
 #import settings values
 from settings import *
@@ -51,9 +33,8 @@ if "../../" not in sys.path: sys.path.append("../../")
 # Set django settings
 os.environ["DJANGO_SETTINGS_MODULE"] = "webapp.settings"
 
-from home.models import *
-from home.ssl_utils import *
-from alerts.models import *
+import django
+django.setup()
 
 #import cuckoo settings
 import webapp
@@ -62,12 +43,10 @@ from webapp.settings import PROJECT_ROOT
 if webapp.settings.CUCKOO_FOUND:
     from webapp.settings import CUCKOO_PATH
     sys.path.append(CUCKOO_PATH)
-    from lib.cuckoo.core.database import Database
 
 #ElJefe imports
 #import ElJefeXMLServerDb
 from ElJefeXMLServerDb import *
-import ElJefeUtils
 
 ENCRYPT_KEY = "12345678901234561234567890123456"
 
@@ -202,7 +181,7 @@ class ElJefeRPC:
         log_date = datetime.datetime.now() 
         
         for process in processes:
-            #print process["child_binary"] + " " + str(process["child_pid"]) 
+            print process["child_binary"] + " " + str(process["child_pid"]) 
             self.uppriv_logger.configure(process, ip_address, certificate,log_date)
         
             try:

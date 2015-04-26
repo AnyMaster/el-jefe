@@ -43,7 +43,7 @@ DATABASES = {
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-USE_TZ = True
+USE_TZ = False
 TIME_ZONE = 'UTC'
 
 

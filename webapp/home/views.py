@@ -1923,7 +1923,7 @@ def binaries_ajax(request):
             continue
 
 	item = []
-	item.append('<input type="hidden" id="select_{{binary.id}}" value="%s" style="width:100%%;" />' % ','.join(binary.tag.names()))
+	item.append('<input type="hidden" id="select_%s" value="%s" style="width:100%%;" />' % (binary.id, ','.join(binary.tag.names())))
 	item.append('<a href=%s>%s</a>' % (reverse('home.views.display_obj',
 	                                           args=['station',
 	                                                 binary.station.id]),

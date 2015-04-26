@@ -7,14 +7,8 @@ import datetime
 import time
 import sys
 import math
-import ssl
-import hashlib 
-import email
-import smtplib
-from email.mime.text import MIMEText
+import hashlib
 from django.core.mail import send_mail
-import ntpath
-from django.core.exceptions import ObjectDoesNotExist
 import logging
 from privs import privilegesdict
 

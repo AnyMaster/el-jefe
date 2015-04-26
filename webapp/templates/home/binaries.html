@@ -23,12 +23,13 @@
                 "fnInitComplete": function(oSettings, json) {
 					  $('#selector').select2({tags:{{str_tags|jsonify|safe}}});
 					  $('#selector_btn').click(function(){
-									      if ($('#selector').val() == ''){
+                          			      if ($('#selector').val() == ''){
 										    url = '/home/binaries/{{objlist.number}}/All';
 									      }
 									      else{
 										    url = '/home/binaries/{{objlist.number}}/' + $('#selector').val();
 									      }
+                                          window.location = url
 									});
 					  $("input").select2({tags:{{str_tags|jsonify|safe}}})
 						.on("select2-selecting", function(e) { $.ajax({url: "{% url "home.views.handle_tags"%}", data: {'action'    : 'add',
@@ -82,7 +83,7 @@ El Jefe - Binaries
 <h3 class="title">Browse Binaries</h3>
 
       <div style="float:right;width:30%;">
-	    <button class="btn btn-danger" id="selector_btn">Filter</button>
+          <button class="btn btn-danger" id="selector_btn">Filter</button>
 	    {% if tag_filter == 'All'%}
 		  <input type="hidden" id="selector" style="width:60%;"/>
 	    {% else %}
