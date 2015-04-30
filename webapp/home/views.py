@@ -1010,9 +1010,11 @@ def binaryRel(request, sid, days):
     nodes = {}
     days = int(days)
     if days == 8888:
-	evs = events.objects.all()
+        evs = events.objects.filter(station_id = sid)
     else:
-	evs = events.objects.filter(event_timestamp__gte = datetime.datetime.now() - timedelta( days= days ) )   
+        evs = events.objects.filter(
+        event_timestamp__gte = datetime.datetime.now() - timedelta( days= days ),
+        station_id = sid)
 	
     for ev in evs:
         p_name = ntpath.basename(ev.parent_binary.file_path)
