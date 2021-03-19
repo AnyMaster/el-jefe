@@ -1,5 +1,5 @@
 Django==1.8
-Jinja2==2.7.2
+Jinja2==2.11.3
 Magic-file-extensions==0.2
 MarkupSafe==0.18
 PAM==0.4.2
