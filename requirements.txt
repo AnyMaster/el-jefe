@@ -21,7 +21,7 @@ django-bootstrap3==5.3.1
 django-taggit==0.13.0
 dpkt==1.6
 duplicity==0.6.23
-html5lib==0.999
+html5lib==0.999999999
 httplib2==0.8
 lockfile==0.8
 lxml==3.3.3
